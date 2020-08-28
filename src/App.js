@@ -1,38 +1,44 @@
-import React, { useReducer } from 'react';
+import React, { createContext } from 'react';
+//import AppRouter from './useContext/AppRouter';
+// import ComponentC from './components/ComponentC';
+// import HookCounter from './useState/HookCounter';
+// import HookArray from './useState/HookArray';
+// import Basic from './useEffect/Basic';
+// import MouseMove from './useEffect/MouseMove';
+//import MouseRemove from './useEffect/MouseRemove';
+//import Timer from './useEffect/Timer';
+// import FetchingWithAxios from './useEffect/FetchingWithAxios';
+// import DataFetching from './useEffect/DataFetching';
+//import DataFetchingReducer from './useReducer/DataFetchingReducer';
+// import UseReducer from './useReducer/UseReducer';
+import AppRouter from './useContext/AppRouter';
 
-const initialState = 0;
+//get from component C
 
-function reducer(state, action) {
-	switch (action) {
-		case 'increment':
-			return state + 1;
-		case 'double':
-			return state * 2;
-		case 'decrement':
-			return state - 1;
-		case 'reset':
-			return initialState;
-		default:
-			return state;
-	}
-}
-
-function Counter() {
-	const [count, dispatch] = useReducer(reducer, initialState);
-
-	return (
-		<>
-			Count: {count}
-			<button onClick={() => dispatch('decrement')}>-</button>
-			<button onClick={() => dispatch('increment')}>+</button>
-			<button onClick={() => dispatch('double')}>x 2</button>
-			<button onClick={() => dispatch('reset')}>x</button>
-		</>
-	);
-}
+// export const UserContext = createContext();
+// export const ChannelContext = createContext();
 
 function App() {
-	return <div className='App'>{Counter()}</div>;
+	return (
+		<div className="App">
+			<AppRouter />
+			{/* <UseReducer /> */}
+			{/*<DataFetchingReducer />
+			<DataFetching />
+			<FetchingWithAxios />
+			<Timer />
+			<MouseRemove />
+			 <MouseMove />
+			<Basic />
+			<HookArray />
+			<HookCounter />
+			<UserContext.Provider value={'Isabel first value'}>
+				<ChannelContext.Provider value={'Company second value'}>
+					<ComponentC />
+				</ChannelContext.Provider>
+			</UserContext.Provider> */}
+		</div>
+	);
 }
 
 export default App;
